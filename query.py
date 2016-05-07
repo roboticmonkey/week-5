@@ -95,8 +95,10 @@ def search_brands_by_name(mystr):
     #I dont get it. I have tried looking at the notes, flask-sqlalchemy docs,
     # sqlalchemy docs and I have not been able to find out what i am doing wrong
     # I have no idea how to get the .like() to work with a variable.
+
+    #i seemed to have figured it out
     
-    brands = Brand.query.filter((Brand.name.like('%mystr%'))|(Brand.name == mystr)).all()
+    brands = Brand.query.filter((Brand.name.like('%'+mystr+'%'))|(Brand.name == mystr)).all()
     
     return brands
 
